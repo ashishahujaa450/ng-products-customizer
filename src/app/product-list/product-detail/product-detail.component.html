@@ -1,0 +1,59 @@
+<div class="card">
+  <img
+    class="card-img-top"
+    src="{{ currentItem.imageUrl }}"
+    alt="{{ currentItem.title }}"
+  />
+  <div class="card-body">
+    <h5 class="card-title">{{ currentItem.title }}</h5>
+    <p class="card-text">
+      {{ currentItem.description }}
+    </p>
+
+    <p class="card-texgt">
+      <strong>
+        {{ currentItem.price * currentItem.qty | currency: "INR":"symbol" }}
+      </strong>
+    </p>
+
+    <div class="d-flex align-items-center">
+      <p>Qty:</p>
+
+      <div class="input-group mb-3 ml-3">
+        <div class="input-group-prepend">
+          <button
+            class="btn btn-primary"
+            type="button"
+            (click)="qtyUpdate('inc')"
+          >
+            +
+          </button>
+        </div>
+        <input
+          type="text"
+          class="form-control text-center"
+          placeholder=""
+          aria-label=""
+          aria-describedby="basic-addon1"
+          value="{{ currentItem.qty }}"
+        />
+        <div class="input-group-append">
+          <button
+            class="btn btn-primary"
+            type="button"
+            (click)="qtyUpdate('dec')"
+          >
+            -
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <a
+      class="btn btn-primary"
+      [ngClass]="{ 'btn-danger': isAddedToCart }"
+      (click)="addToCart(currentItem)"
+      >{{ isAddedToCart ? "Remove From" : "Add To" }} Cart</a
+    >
+  </div>
+</div>

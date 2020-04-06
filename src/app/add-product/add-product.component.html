@@ -1,0 +1,66 @@
+<h1>Add Product Form</h1>
+
+<form action="" class="mt-4">
+  <div class="form-group">
+    <label for="title">Product title</label>
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Enter title"
+      id="title"
+      [(ngModel)]="productData.title"
+      name="title"
+    />
+  </div>
+  <div class="form-group">
+    <label for="description">Product Description:</label>
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Enter Description"
+      id="description"
+      [(ngModel)]="productData.description"
+      name="description"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="qty">Quantity</label>
+    <input
+      type="number"
+      class="form-control"
+      placeholder="Enter Quantity"
+      id="qty"
+      [(ngModel)]="productData.qty"
+      name="quantity"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="price">Price Per Unit</label>
+    <input
+      type="number"
+      class="form-control"
+      placeholder="Enter Price"
+      id="price"
+      [(ngModel)]="productData.price"
+      name="price"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="imageUrl">Image Url</label>
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Enter Image Url"
+      id="imageUrl"
+      [(ngModel)]="productData.imageUrl"
+      name="imageUrl"
+    />
+  </div>
+
+  <button type="submit" class="btn btn-primary" (click)="addProduct($event)">
+    Add Product
+  </button>
+</form>
